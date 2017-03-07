@@ -38,7 +38,7 @@ var data = [
   }
 ]
 
-var calculateWidth = function(data){
+var calculateInventoryWidth = function(data){
   widthArray = []
   for(i=0;i<data.length;i++){
     width = (data[i].inventory/5000)
@@ -47,19 +47,53 @@ var calculateWidth = function(data){
   console.log(widthArray)
 }
 
-calculateWidth(data);
+calculateInventoryWidth(data);
 
-var createBars = function(data){
+var createInventoryBars = function(data){
   barDiv = $('<div class="barDiv"></div>')
   for(i=0;i<data.length;i++){
     bar = $('<div class="bar"></bar>');
-    bar.css('width', widthArray[i]*100);
+    bar.css('width', widthArray[i]*500);
     barDiv.append(bar);
     body = $('body');
     body.append(barDiv);
   }
 }
 
-createBars(data);
+createInventoryBars(data);
+
+var calculateProfitWidth = function(data){
+  widthProfitArray = []
+  for(i=0;i<data.length;i++){
+    profitWidth = (data[i].profits/200000)
+    widthProfitArray.push(profitWidth)
+  }
+  console.log(widthProfitArray)
+}
+
+
+var createProfitBars = function(data){
+  barDiv = $('<div class="barDiv"></div>')
+  for(i=0;i<data.length;i++){
+    bar = $('<div class="bar"></bar>');
+    bar.css('width', widthProfitArray[i]*500);
+    barDiv.append(bar);
+    body = $('body');
+    body.append(barDiv);
+  }
+}
+
+
+$('.inventory').click(function(){
+  barDiv.remove();
+  calculateInventoryWidth(data);
+  createInventoryBars(data);
+})
+
+$('.profits').click(function(){
+  barDiv.remove();
+  calculateProfitWidth(data);
+  createProfitBars(data);
+})
 
 

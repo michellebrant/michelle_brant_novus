@@ -33,3 +33,45 @@ p{
 .bar:hover{
   background-color: darkblue;
 }
+
+.nav{
+  height: 50px;
+  margin-bottom: 5%;
+}
+
+.dropbutton{
+  background-color: grey;
+  color: white;
+  font-size: 16px;
+  border: 1px black solid;
+}
+
+.dropbutton:hover{
+  background-color: white;
+  color: grey;
+}
+
+.dropdown:hover .content{
+  display: block;
+}
+
+.content{
+  display: none;
+  position: absolute;
+}
+
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+.content li{
+  color: black;
+  text-decoration: none;
+  display: block;
+  border: 1px black solid;
+}
+
+.content li:hover{
+  background-color: grey;
+  color: white;
+}
