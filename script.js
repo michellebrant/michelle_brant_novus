@@ -1,6 +1,5 @@
 console.log('js loaded')
-
-var data = [
+data = [
   {
     month: 'Jan',
     profits: 100000,
@@ -38,6 +37,17 @@ var data = [
   }
 ]
 
+var width = $('.bargraph').css('width')
+var width = width.slice(0, -1)
+var width = width.slice(0, -1)
+var width1 = parseInt(width)
+var width2 = $('.months').css('width')
+var width2 = width2.slice(0, -1)
+var width2 = width2.slice(0, -1)
+var width3 = parseInt(width2)
+var widthToUse = width1 - width3
+var widthToUse2 = widthToUse/width
+
 var calculateInventoryWidth = function(data){
   widthArray = []
   for(i=0;i<data.length;i++){
@@ -50,13 +60,13 @@ var calculateInventoryWidth = function(data){
 calculateInventoryWidth(data);
 
 var createInventoryBars = function(data){
-  barDiv = $('<div class="barDiv"></div>')
+  barDiv = $('<div class="barDiv"></div>');
+  barDiv.css('width', widthToUse2*100 + '%')
   for(i=0;i<data.length;i++){
     bar = $('<div class="bar"></bar>');
-    bar.css('width', widthArray[i]*500);
+    bar.css('width', widthArray[i]*100 + '%');
     barDiv.append(bar);
-    body = $('body');
-    body.append(barDiv);
+    $('.bargraph').append(barDiv);
   }
 }
 
@@ -73,13 +83,13 @@ var calculateProfitWidth = function(data){
 
 
 var createProfitBars = function(data){
-  barDiv = $('<div class="barDiv"></div>')
+  barDiv = $('<div class="barDiv"></div>');
+  barDiv.css('width', widthToUse2*100 + '%')
   for(i=0;i<data.length;i++){
     bar = $('<div class="bar"></bar>');
-    bar.css('width', widthProfitArray[i]*500);
+    bar.css('width', widthProfitArray[i]*100 + '%');
     barDiv.append(bar);
-    body = $('body');
-    body.append(barDiv);
+    $('.bargraph').prepend(barDiv);
   }
 }
 
@@ -88,12 +98,14 @@ $('.inventory').click(function(){
   barDiv.remove();
   calculateInventoryWidth(data);
   createInventoryBars(data);
+  $('.header').text('Inventory by Month')
 })
 
 $('.profits').click(function(){
   barDiv.remove();
   calculateProfitWidth(data);
   createProfitBars(data);
+  $('.header').text('Profits by Month')
 })
 
 

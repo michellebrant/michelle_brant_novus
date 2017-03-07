@@ -1,8 +1,17 @@
+body{
+  font-family: 'helvetica';
+}
+
 .bargraph{
   height: 600px;
-  width: 70%;
+  width: 90%;
   border: solid black 1px;
   margin-top: 5%;
+
+}
+
+.actualgraph{
+  background-color: red;
 }
 
 .months{
@@ -16,18 +25,19 @@
 p{
   margin-bottom: 70px;
   margin-right: 5px;
+  margin-top: -.01px;
 }
 
 .bar{
   height: 30px;
   background-color: lightblue;
   border: solid black 1px;
-  margin-bottom: 57px;
+  margin-bottom: 54px;
   margin-left: 10.1%;
 }
 
 .barDiv{
-  margin-top: -600px;
+  margin-left: 2.2%;
 }
 
 .bar:hover{
@@ -39,11 +49,18 @@ p{
   margin-bottom: 5%;
 }
 
+.header{
+  float: left;
+  margin: 0;
+}
+
 .dropbutton{
   background-color: grey;
   color: white;
   font-size: 16px;
   border: 1px black solid;
+  height: 30px;
+
 }
 
 .dropbutton:hover{
@@ -63,15 +80,23 @@ p{
 .dropdown{
   position: relative;
   display: inline-block;
+  float: right;
+  margin-right: 15px;
 }
 .content li{
-  color: black;
+  color: grey;
   text-decoration: none;
   display: block;
   border: 1px black solid;
+  height: 30px;
 }
 
 .content li:hover{
   background-color: grey;
   color: white;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
 }
