@@ -1,4 +1,11 @@
-console.log('js loaded')
+var getData = function(){
+$.getJSON("data.json", function(json) {
+    console.log(json); // this will show the info it in firebug console
+});
+}
+
+getData();
+
 data = [
   {
     month: 'Jan',
@@ -54,7 +61,6 @@ var calculateInventoryWidth = function(data){
     width = (data[i].inventory/5000)
     widthArray.push(width)
   }
-  console.log(widthArray)
 }
 
 calculateInventoryWidth(data);
@@ -78,7 +84,7 @@ var calculateProfitWidth = function(data){
     profitWidth = (data[i].profits/200000)
     widthProfitArray.push(profitWidth)
   }
-  console.log(widthProfitArray)
+
 }
 
 
