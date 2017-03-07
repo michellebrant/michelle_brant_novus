@@ -1,0 +1,35 @@
+.bargraph{
+  height: 600px;
+  width: 70%;
+  border: solid black 1px;
+  margin-top: 5%;
+}
+
+.months{
+  float: left;
+  height: 600px;
+  width: 10%;
+  border: solid black 1px;
+  text-align: right;
+}
+
+p{
+  margin-bottom: 70px;
+  margin-right: 5px;
+}
+
+.bar{
+  height: 30px;
+  background-color: lightblue;
+  border: solid black 1px;
+  margin-bottom: 57px;
+  margin-left: 10.1%;
+}
+
+.barDiv{
+  margin-top: -600px;
+}
+
+.bar:hover{
+  background-color: darkblue;
+}
